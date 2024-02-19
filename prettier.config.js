@@ -6,7 +6,10 @@ module.exports = {
   singleQuote: true,
   semi: true,
   // Since prettier 3.0, manually specifying plugins is required
-  plugins: ['@ianvs/prettier-plugin-sort-imports'],
+  plugins: [
+    'prettier-plugin-tailwindcss',
+    '@ianvs/prettier-plugin-sort-imports',
+  ],
   // This plugin's options
   importOrder: [
     '^(react/(.*)$)|^(react$)',

@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { UserButton } from '@clerk/nextjs';
 
 export default function Home() {
   return (
-    <main className="">
-      <Button>Click me</Button>
-    </main>
+    <div className="flex flex-col gap-y-4">
+      <div>This is a Protected Page!</div>
+      <div>
+        <UserButton />
+      </div>
+    </div>
   );
 }

@@ -29,7 +29,7 @@ export default function Navbar(props: INavbarProps) {
               rootBox: {
                 display: 'flex',
                 justifyContent: 'center',
-                aligncontent: 'center',
+                alignItems: 'center',
                 width: '100%',
                 maxWidth: '376px',
               },
@@ -39,7 +39,7 @@ export default function Navbar(props: INavbarProps) {
                 borderRadius: '8px',
                 border: '1px solid #E5E7EB',
                 justifyContent: 'space-between',
-                backgroundColor: '#fff',
+                backgroundColor: 'white',
               },
             },
           }}

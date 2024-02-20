@@ -26,7 +26,7 @@ export default function OrgSidebar(props: IOrgSidebarProps) {
         <div className="flex items-center gap-x-2">
           <Image src={'/logo.svg'} width={60} height={60} alt="logo" />
           <span className={cn('font-semibold text-2xl', font.className)}>
-            Board
+            Boards
           </span>
         </div>
       </Link>

@@ -1,11 +1,29 @@
+'use client';
+
 import * as React from 'react';
 
-export interface IDashboardPageProps {}
+import { useOrganization } from '@clerk/nextjs';
 
-export default function DashboardPage(props: IDashboardPageProps) {
+import BoardList from './_components/board-list';
+import EmptyOrg from './_components/empty-org';
+
+export interface IDashboardPageProps {
+  searchParams: {
+    search?: string;
+    favourites?: string;
+  };
+}
+
+export default function DashboardPage({ searchParams }: IDashboardPageProps) {
+  const { organization } = useOrganization();
+
   return (
-    <div>
-      <h3>this is dashboard page</h3>
+    <div className="flex-1 h-[calc(100%-80px)] p-6">
+      {!organization ? (
+        <EmptyOrg />
+      ) : (
+        <BoardList orgId={organization.id} query={searchParams} />
+      )}
     </div>
   );
 }

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
 import {
   OrganizationSwitcher,
   useOrganization,
   UserButton,
-} from '@clerk/nextjs';
+} from "@clerk/nextjs";
 
-import InviteButton from './invite-button';
-import SearchInput from './search-input';
+import InviteButton from "./invite-button";
+import SearchInput from "./search-input";
 
 export interface INavbarProps {}
 
@@ -27,19 +27,19 @@ export default function Navbar(props: INavbarProps) {
           appearance={{
             elements: {
               rootBox: {
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: '100%',
-                maxWidth: '376px',
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                maxWidth: "376px",
               },
               organizationSwitcherTrigger: {
-                padding: '6px',
-                width: '100%',
-                borderRadius: '8px',
-                border: '1px solid #E5E7EB',
-                justifyContent: 'space-between',
-                backgroundColor: 'white',
+                padding: "6px",
+                width: "100%",
+                borderRadius: "8px",
+                border: "1px solid #E5E7EB",
+                justifyContent: "space-between",
+                backgroundColor: "white",
               },
             },
           }}

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import Image from 'next/image';
+import * as React from "react";
+import Image from "next/image";
 
-import { api } from '@/convex/_generated/api';
-import { useOrganization } from '@clerk/nextjs';
-import { useMutation } from 'convex/react';
-import { toast } from 'sonner';
+import { api } from "@/convex/_generated/api";
+import { useOrganization } from "@clerk/nextjs";
+import { useMutation } from "convex/react";
+import { toast } from "sonner";
 
-import { useApiMutation } from '@/hooks/use-api-mutation';
-import { Button } from '@/components/ui/button';
+import { useApiMutation } from "@/hooks/use-api-mutation";
+import { Button } from "@/components/ui/button";
 
 export interface IEmptyBoardsProps {}
 
@@ -23,18 +23,18 @@ export default function EmptyBoards(props: IEmptyBoardsProps) {
 
     mutate({
       orgId: organization?.id,
-      title: 'Untitled',
+      title: "Untitled",
     })
       .then((id) => {
-        toast.success('Board created');
+        toast.success("Board created");
         // TODO: Redirect to board id
       })
-      .catch(() => toast.error('Failed to create board'));
+      .catch(() => toast.error("Failed to create board"));
   };
 
   return (
     <div className="h-full flex flex-col items-center justify-center">
-      <Image src={'/note.svg'} alt="empty-search" height={110} width={110} />
+      <Image src={"/note.svg"} alt="empty-search" height={110} width={110} />
       <h2 className="text-2xl font-semibold mt-6">Create your first board!</h2>
       <p className="text-muted-foreground text-sm mt-2">
         Start by creating a board for your organization

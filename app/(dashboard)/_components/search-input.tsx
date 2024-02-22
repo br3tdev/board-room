@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import * as React from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
-import { Search } from 'lucide-react';
-import qs from 'query-string';
-import { useDebounceValue } from 'usehooks-ts';
+import { Search } from "lucide-react";
+import qs from "query-string";
+import { useDebounceValue } from "usehooks-ts";
 
-import { Input } from '@/components/ui/input';
+import { Input } from "@/components/ui/input";
 
 export interface ISearchInputProps {}
 
 export default function SearchInput(props: ISearchInputProps) {
   const router = useRouter();
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>("");
   const [debounceValue] = useDebounceValue<string>(value, 500);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ export default function SearchInput(props: ISearchInputProps) {
   useEffect(() => {
     const url = qs.stringifyUrl(
       {
-        url: '/',
+        url: "/",
         query: {
           search: debounceValue,
         },

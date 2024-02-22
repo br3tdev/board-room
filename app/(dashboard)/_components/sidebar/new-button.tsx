@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { CreateOrganization } from '@clerk/nextjs';
-import { Plus } from 'lucide-react';
+import { CreateOrganization } from "@clerk/nextjs";
+import { Plus } from "lucide-react";
 
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import Hint from '@/components/hint';
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import Hint from "@/components/hint";
 
 export interface INewButtonProps {}
 
@@ -16,7 +16,7 @@ export default function NewButton(props: INewButtonProps) {
       <DialogTrigger asChild>
         <div className="aspect-square">
           <Hint
-            label={'Create Organization'}
+            label={"Create Organization"}
             side="right"
             align="start"
             sideOffset={18}

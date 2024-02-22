@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { api } from '@/convex/_generated/api';
-import { useQuery } from 'convex/react';
+import { api } from "@/convex/_generated/api";
+import { useQuery } from "convex/react";
 
-import BoardCard from './board-card';
-import EmptyBoards from './empty-boards';
-import EmptyFavourites from './empty-favourites';
-import EmptySearch from './empty-search';
-import NewBoardButton from './new-board-button';
+import BoardCard from "./board-card";
+import EmptyBoards from "./empty-boards";
+import EmptyFavourites from "./empty-favourites";
+import EmptySearch from "./empty-search";
+import NewBoardButton from "./new-board-button";
 
 export interface IBoardListProps {
   orgId: string;
@@ -26,7 +26,7 @@ export default function BoardList({ orgId, query }: IBoardListProps) {
     return (
       <div className="">
         <h2 className="text-3xl">
-          {query.favourites ? 'Favourites boards' : 'Team boards'}
+          {query.favourites ? "Favourites boards" : "Team boards"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">
           <NewBoardButton orgId={orgId} disabled />
@@ -55,7 +55,7 @@ export default function BoardList({ orgId, query }: IBoardListProps) {
   return (
     <div className="">
       <h2 className="text-3xl">
-        {query.favourites ? 'Favourites boards' : 'Team boards'}
+        {query.favourites ? "Favourites boards" : "Team boards"}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">

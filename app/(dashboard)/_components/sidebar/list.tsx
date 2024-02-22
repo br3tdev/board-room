@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { truncate } from 'fs';
-import * as React from 'react';
+import { truncate } from "fs";
+import * as React from "react";
 
-import { useOrganizationList } from '@clerk/nextjs';
+import { useOrganizationList } from "@clerk/nextjs";
 
-import Item from './item';
+import Item from "./item";
 
 export interface IListProps {}
 

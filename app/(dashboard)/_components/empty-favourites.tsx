@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Image from 'next/image';
+import * as React from "react";
+import Image from "next/image";
 
 export interface IEmptyFavouritesProps {}
 
@@ -7,7 +7,7 @@ export default function EmptyFavourites(props: IEmptyFavouritesProps) {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <Image
-        src={'/empty-favorites.svg'}
+        src={"/empty-favorites.svg"}
         alt="empty-search"
         height={140}
         width={140}

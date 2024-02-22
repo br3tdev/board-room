@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { api } from '@/convex/_generated/api';
-import { Plus } from 'lucide-react';
-import { toast } from 'sonner';
+import { api } from "@/convex/_generated/api";
+import { Plus } from "lucide-react";
+import { toast } from "sonner";
 
-import { cn } from '@/lib/utils';
-import { useApiMutation } from '@/hooks/use-api-mutation';
+import { cn } from "@/lib/utils";
+import { useApiMutation } from "@/hooks/use-api-mutation";
 
 export interface INewBoardButtonProps {
   orgId: string;
@@ -23,13 +23,13 @@ export default function NewBoardButton({
   const onClick = () => {
     mutate({
       orgId,
-      title: 'Untitled',
+      title: "Untitled",
     })
       .then((id) => {
-        toast.success('Board created');
+        toast.success("Board created");
         // TODO: Redirect to board id
       })
-      .catch(() => toast.error('Failed to create board'));
+      .catch(() => toast.error("Failed to create board"));
   };
 
   return (
@@ -37,9 +37,9 @@ export default function NewBoardButton({
       disabled={pending || disabled}
       onClick={onClick}
       className={cn(
-        'col-span-1 aspect-[100/127] bg-blue-600 rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6',
+        "col-span-1 aspect-[100/127] bg-blue-600 rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6",
         (pending || disabled) &&
-          'opacity-75 hover:bg-blue-600 cursor-not-allowed',
+          "opacity-75 hover:bg-blue-600 cursor-not-allowed",
       )}
     >
       <div className="" />

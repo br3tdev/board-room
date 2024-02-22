@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import Image from 'next/image';
+import * as React from "react";
+import Image from "next/image";
 
-import { useOrganization, useOrganizationList } from '@clerk/nextjs';
+import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 
-import { cn } from '@/lib/utils';
-import Hint from '@/components/hint';
+import { cn } from "@/lib/utils";
+import Hint from "@/components/hint";
 
 export interface IItemProps {
   id: string;
@@ -38,8 +38,8 @@ export default function Item({ id, name, imageUrl }: IItemProps) {
           alt={name}
           fill
           className={cn(
-            'rounded-md cursor-pointer opacity-75 hover:opacity-100 transition',
-            isActive && 'opacity-100',
+            "rounded-md cursor-pointer opacity-75 hover:opacity-100 transition",
+            isActive && "opacity-100",
           )}
         />
       </Hint>

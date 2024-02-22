@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { OrganizationProfile } from '@clerk/nextjs';
-import { Plus } from 'lucide-react';
+import { OrganizationProfile } from "@clerk/nextjs";
+import { Plus } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export interface IInviteButtonProps {}
 
@@ -12,7 +12,7 @@ export default function InviteButton(props: IInviteButtonProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={'outline'}>
+        <Button variant={"outline"}>
           <Plus className="h-4 w-4 mr-2" />
           Invite members
         </Button>

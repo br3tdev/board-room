@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Star } from 'lucide-react';
+import { Star } from "lucide-react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface IFooterProps {
   title: string;
@@ -31,14 +31,14 @@ export default function Footer({
         disabled={disabled}
         onClick={onClick}
         className={cn(
-          'opacity-0 group-hover:opacity-100 transition absolute top-3 right-3 text-muted-foreground hover:text-blue-600',
-          disabled && 'cursor-not-allowed opacity-75',
+          "opacity-0 group-hover:opacity-100 transition absolute top-3 right-3 text-muted-foreground hover:text-blue-600",
+          disabled && "cursor-not-allowed opacity-75",
         )}
       >
         <Star
           className={cn(
-            'h-5 w-5',
-            isFavourite && 'fill-blue-600 text-blue-600',
+            "h-5 w-5",
+            isFavourite && "fill-blue-600 text-blue-600",
           )}
         />
       </button>

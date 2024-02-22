@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { useOrganization } from '@clerk/nextjs';
+import { useOrganization } from "@clerk/nextjs";
 
-import BoardList from './_components/board-list';
-import EmptyOrg from './_components/empty-org';
+import BoardList from "./_components/board-list";
+import EmptyOrg from "./_components/empty-org";
 
 export interface IDashboardPageProps {
   searchParams: {

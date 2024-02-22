@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Image from 'next/image';
+import * as React from "react";
+import Image from "next/image";
 
 export interface IEmptySearchProps {}
 
@@ -7,7 +7,7 @@ export default function EmptySearch(props: IEmptySearchProps) {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <Image
-        src={'/empty-search.svg'}
+        src={"/empty-search.svg"}
         alt="empty-search"
         height={140}
         width={140}

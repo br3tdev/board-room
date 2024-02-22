@@ -1,17 +1,17 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from './ui/tooltip';
+} from "./ui/tooltip";
 
 interface IHintProps {
   label: string;
   children: React.ReactNode;
-  side?: 'top' | 'bottom' | 'left' | 'right';
-  align?: 'start' | 'center' | 'end';
+  side?: "top" | "bottom" | "left" | "right";
+  align?: "start" | "center" | "end";
   sideOffset?: number;
   alignOffset?: number;
 }

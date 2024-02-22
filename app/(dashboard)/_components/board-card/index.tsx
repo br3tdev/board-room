@@ -1,16 +1,19 @@
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import * as React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { useAuth } from "@clerk/nextjs";
-import { formatDistanceToNow } from "date-fns";
-import { MoreHorizontal } from "lucide-react";
+import { api } from '@/convex/_generated/api';
+import { useAuth } from '@clerk/nextjs';
+import { formatDistanceToNow } from 'date-fns';
+import { MoreHorizontal } from 'lucide-react';
+import { toast } from 'sonner';
 
-import { Skeleton } from "@/components/ui/skeleton";
-import Actions from "@/components/actions";
+import { useApiMutation } from '@/hooks/use-api-mutation';
+import { Skeleton } from '@/components/ui/skeleton';
+import Actions from '@/components/actions';
 
-import Footer from "./footer";
-import Overlay from "./overlay";
+import Footer from './footer';
+import Overlay from './overlay';
 
 export interface IBoardCardProps {
   id: string;
@@ -35,8 +38,26 @@ export default function BoardCard({
 }: IBoardCardProps) {
   const { userId } = useAuth();
 
-  const authorLabel = userId === authorId ? "You" : authorName;
+  const authorLabel = userId === authorId ? 'You' : authorName;
   const createdAtLabel = formatDistanceToNow(createdAt, { addSuffix: true });
+
+  const { mutate: onFavourite, pending: pendingFavourite } = useApiMutation(
+    api.board.favourite,
+  );
+
+  const { mutate: onUnFavourite, pending: pendingUnfavourite } = useApiMutation(
+    api.board.unfavourite,
+  );
+
+  const toogleFavourite = () => {
+    if (isFavourite) {
+      onUnFavourite({ id }).catch(() => toast.error('Failed to unfavourite'));
+    } else {
+      onFavourite({ id, orgId }).catch(() =>
+        toast.error('Failed to favourite'),
+      );
+    }
+  };
 
   return (
     <Link href={`/board/${id}`}>
@@ -57,8 +78,8 @@ export default function BoardCard({
           title={title}
           authorLabel={authorLabel}
           createdAtLabel={createdAtLabel}
-          onClick={() => {}}
-          disabled={false}
+          onClick={toogleFavourite}
+          disabled={pendingFavourite || pendingUnfavourite}
         />
       </div>
     </Link>

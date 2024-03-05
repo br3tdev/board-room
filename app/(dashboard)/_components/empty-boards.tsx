@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
 import { useOrganization } from "@clerk/nextjs";
@@ -14,9 +15,11 @@ import { Button } from "@/components/ui/button";
 export interface IEmptyBoardsProps {}
 
 export default function EmptyBoards(props: IEmptyBoardsProps) {
+  const router = useRouter();
+
   const { organization } = useOrganization();
 
-  const { mutate, pending } = useApiMutation(api.boards.create);
+  const { mutate, pending } = useApiMutation(api.board.create);
 
   const onClick = () => {
     if (!organization) return;
@@ -27,7 +30,7 @@ export default function EmptyBoards(props: IEmptyBoardsProps) {
     })
       .then((id) => {
         toast.success("Board created");
-        // TODO: Redirect to board id
+        router.push(`/board/${id}`);
       })
       .catch(() => toast.error("Failed to create board"));
   };

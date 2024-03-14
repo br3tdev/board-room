@@ -10,7 +10,7 @@ export default function Participants(props: IParticipantsProps) {
   );
 }
 
-Participants.Skeleton = function ParticipantsSkeleton() {
+export const ParticipantsSkeleton = function ParticipantsSkeleton() {
   return (
     <div className="absolute w-[100px] h-12 top-2 right-2 bg-neutral-300 rounded-md p-3 flex items-center shadow-md">
       <Skeleton className="h-full w-full bg-neutral-300" />

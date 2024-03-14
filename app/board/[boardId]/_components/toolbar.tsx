@@ -21,7 +21,7 @@ export default function Toolbar(props: IToolbarProps) {
   );
 }
 
-Toolbar.Skeleton = function ToolbarSkeleton() {
+export const ToolbarSkeleton = function ToolbarSkeleton() {
   return (
     <div className="absolute top-[50%] -translate-y-[50%] left-2 flex flex-col gap-y-4 bg-neutral-300 shadow-md rounded-md h-[360px] w-[52px]">
       <Skeleton className="h-full w-full bg-neutral-300" />

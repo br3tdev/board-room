@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { RectangleLayer } from "@/types/canvas";
+import { colorToCss } from "@/lib/utils";
 
 export interface IRectangleProps {
   id: string;
@@ -27,8 +28,8 @@ export default function Rectangle({
       width={width}
       height={height}
       strokeWidth={1}
-      fill="#000"
-      stroke="transparent"
+      fill={fill ? colorToCss(fill) : "#000"}
+      stroke={selectionColor || "transparent"}
     />
   );
 }

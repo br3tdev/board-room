@@ -47,3 +47,5 @@ export const Cursor = memo(({ connectionId }: ICursorProps) => {
     </foreignObject>
   );
 });
+
+Cursor.displayName = 'Cursor';

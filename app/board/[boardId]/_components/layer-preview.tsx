@@ -83,4 +83,4 @@ export const LayerPreview = memo(
   },
 );
 
-LayerPreview;
+LayerPreview.displayName = 'LayerPreview';
